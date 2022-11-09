@@ -1,15 +1,15 @@
 public class Hero {
-    private MoveStrategy move_type = null;
+    private MoveStrategyInterface move_type = null;
 
     public Hero() {
     }
 
-    void changeMoveStrategy(MoveStrategy new_stratagy) {
-        move_type = new_stratagy;
+    void setMoveStrategy(MoveStrategyInterface new_strategy) {
+        move_type = new_strategy;
     }
 
     @Override
     public String toString() {
-        return "current move_type is: " + move_type;
+        return move_type.toString();
     }
 }

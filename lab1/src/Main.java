@@ -1,15 +1,14 @@
 public class Main {
     public static void main(String[] args) {
         Hero hero = new Hero();
-        System.out.println(hero); // current move_type is: null
 
-        hero.changeMoveStrategy(MoveStrategy.WALK);
-        System.out.println(hero); // current move_type is: WALK
+        hero.setMoveStrategy(new Run(1));
+        System.out.println(hero); // RUN with speed: 1
 
-        hero.changeMoveStrategy(MoveStrategy.HORSE_RIDE);
-        System.out.println(hero); // current move_type is: HORSE_RIDE
+        hero.setMoveStrategy(new Ride(2));
+        System.out.println(hero); // RIDE with speed: 2
 
-        hero.changeMoveStrategy(MoveStrategy.FLY);
-        System.out.println(hero); // current move_type is: FLY
+        hero.setMoveStrategy(new Fly(3));
+        System.out.println(hero); // FLY with speed: 3
     }
 }
