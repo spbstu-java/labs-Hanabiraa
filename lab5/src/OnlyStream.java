@@ -1,26 +1,22 @@
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 
 public class OnlyStream {
-    public double average(Collection<Integer> collection) {
+    public double average(List<Integer> collection) {
         return collection.stream()
                 .mapToInt(num -> num)
                 .average()
                 .orElse(0.0);
     }
 
-    public Collection<String> StringFormatter(Collection<String> collection) {
+    public List<String> stringFormatter(List<String> collection) {
         return collection.stream()
                 .map(String::toUpperCase)
                 .map(str -> "__new__" + str)
                 .collect(Collectors.toList());
     }
 
-    public Collection<Integer> SquareForUniqNums(Collection<Integer> collection) {
+    public List<Integer> squareForUniqNums(List<Integer> collection) {
         return collection.stream()
                 .mapToInt(num -> num)
                 .filter(num -> Collections.frequency(collection, num) == 1)
@@ -29,7 +25,7 @@ public class OnlyStream {
                 .collect(Collectors.toList());
     }
 
-    public Collection<String> FilteredSortedStrings(Collection<String> collection, char ch) {
+    public List<String> filteredSortedStrings(Collection<String> collection, char ch) {
         return collection.stream()
                 .filter(str -> str.startsWith(String.valueOf(ch)))
                 .sorted()
@@ -42,9 +38,8 @@ public class OnlyStream {
                 .orElseThrow(RuntimeException::new);
     }
 
-    public Integer sumEvenNums(Collection<Integer> collection) {
-        return collection.stream()
-                .mapToInt(num -> num)
+    public Integer sumEvenNums(int[] collection) {
+        return Arrays.stream(collection)
                 .filter(num -> num % 2 == 0)
                 .sum();
     }

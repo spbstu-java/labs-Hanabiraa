@@ -8,22 +8,22 @@ public class Main {
         OnlyStream cls = new OnlyStream();
 
         // среднее значение коллекции
-        Collection<Integer> colInts = List.of(4, 6, 20);
+        List<Integer> colInts = List.of(4, 6, 20);
         out.println(cls.average(colInts));
 
         // метод, приводящий все строки в списке в верхний регистр и добавляющий к ним префикс __new__
-        Collection<String> colStrings = List.of("lorem", "ipsum", "dolor");
-        out.println(cls.StringFormatter(colStrings));
+        List<String> colStrings = List.of("lorem", "ipsum", "dolor");
+        out.println(cls.stringFormatter(colStrings));
 
         // метод, возвращающий список квадратов всех встречающихся только один раз элементов списка;
-        Collection<Integer> colIntsSquares = List.of(4, 4, 3);
-        out.println(cls.SquareForUniqNums(colIntsSquares));
+        List<Integer> colIntsSquares = List.of(4, 4, 3);
+        out.println(cls.squareForUniqNums(colIntsSquares));
 
         // метод, принимающий на вход коллекцию строк и возвращающий все строки,
         // начинающиеся с заданной буквы, отсортированные по алфавиту;
-        Collection<String> colStringsForSort = List.of("lorem", "ipsum", "dolor", "dollar", "design", "downshift");
+        List<String> colStringsForSort = List.of("lorem", "ipsum", "dolor", "dollar", "design", "downshift");
         char ch = 'd';
-        out.println(cls.FilteredSortedStrings(colStringsForSort, ch));
+        out.println(cls.filteredSortedStrings(colStringsForSort, ch));
 
         // метод, принимающий на вход коллекцию и возвращающий её последний элемент
         // или кидающий исключение, если коллекция пуста;
@@ -38,14 +38,13 @@ public class Main {
 
         // метод, принимающий на вход массив целых чисел, возвращающий сумму чётных чисел
         // или 0, если чётных чисел нет;
-        Collection<Integer> colWithOddAndEven = List.of(1, 2, 3, 4);
-        Collection<Integer> colWithOdd = List.of(1, 3, 5);
+        int[] colWithOddAndEven = {1, 2, 3, 4};
+        int[] colWithOdd = {1, 3, 5};
         out.println(cls.sumEvenNums(colWithOddAndEven));
         out.println(cls.sumEvenNums(colWithOdd));
 
         // метод, преобразовывающий все строки в списке в Map, где первый символ – ключ, оставшиеся – значение;
         Collection<String> collStrForMap = List.of("lorem", "ipsum", "dolor");
         out.println(cls.stringsToMap(collStrForMap));
-
     }
 }
